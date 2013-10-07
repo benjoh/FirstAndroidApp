@@ -15,9 +15,11 @@ import android.support.v4.app.FragmentPagerAdapter;
  * one of the sections/tabs/pages.
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-	public SectionsPagerAdapter(FragmentManager fm) {
+	MainActivity mainActivity;
+	
+	public SectionsPagerAdapter(FragmentManager fm, MainActivity mainActivity) {
 		super(fm);
+		this.mainActivity = mainActivity;
 	}
 
 	@Override
@@ -29,6 +31,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 		switch(position){
 		case 0 : 
 			fragment = new IMDBFragment();
+			((IMDBFragment) fragment).setContext(mainActivity);
 			break;
 		case 1 :
 			fragment = new CollectionFragment();
@@ -54,9 +57,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 		Locale l = Locale.getDefault();
 		switch (position) {
 		case 0:
-			return MainActivity.context.getString(R.string.title_section1).toUpperCase(l);
+			return mainActivity.getString(R.string.title_section1).toUpperCase(l);
 		case 1:
-			return MainActivity.context.getString(R.string.title_section2).toUpperCase(l);
+			return mainActivity.getString(R.string.title_section2).toUpperCase(l);
 		}
 		return null;
 	}

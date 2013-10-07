@@ -21,8 +21,11 @@
     <ListView
         android:id="@+id/searchresults"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/searchbox" />
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:layout_below="@id/searchbox"
+        android:listSelector="@drawable/list_selector" />
 
 </RelativeLayout>

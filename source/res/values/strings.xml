@@ -7,4 +7,5 @@
     <string name="title_section2">My Collection</string>
     <string name="search">Search</string>
     <string name="searchurl">http://sg.media-imdb.com/suggests/%1$s/%2$s.json</string>
+    <string name="imageDescription">Dette er et bilde</string>
 </resources>

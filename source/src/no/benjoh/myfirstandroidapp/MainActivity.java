@@ -8,17 +8,15 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
 public class MainActivity extends FragmentActivity {
-	public static Context context;
 	SectionsPagerAdapter sectionsPagers;
 	ViewPager viewPager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		context = this;
 		setContentView(R.layout.activity_main);
 
-		sectionsPagers = new SectionsPagerAdapter(getSupportFragmentManager());
+		sectionsPagers = new SectionsPagerAdapter(getSupportFragmentManager(), this);
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		viewPager.setAdapter(sectionsPagers);
 	}

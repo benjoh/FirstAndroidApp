@@ -24,13 +24,14 @@ public class IMDBParser {
 			Log.d(TAG, jsonArray.length() + " items found");
 			for (int i = 0; i < jsonArray.length(); i++) {
 				JSONObject item = jsonArray.getJSONObject(i);
-				result.add(new IMDBItem(item.getString("l"), item.getString("s")));
+				String type = item.optString("q");
+				if(type != null && type.equals("feature"))
+					result.add(new IMDBItem(item.getString("l"), item.getString("s")));
 			}
 		} 
 		catch (JSONException e) { 
 			throw new RuntimeException(e);
 		} 
-		
 		return result;
 	}
 	
